@@ -1,0 +1,17 @@
+DECLARE
+x number := 0;
+y number := 1;
+temp number;
+n number := 20;
+i number;
+BEGIN
+   dbms_output.put_line('fibonacci series is :');
+   dbms_output.put_line(x);
+   dbms_output.put_line(y);
+   FOR i in 2..n LOOP
+      temp:= x + y;
+      x := y;
+      y := temp;
+      dbms_output.put_line(temp);
+   END LOOP;
+END;

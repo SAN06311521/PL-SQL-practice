@@ -1,0 +1,25 @@
+DECLARE
+  n number;
+  i number;
+  flag number;
+ 
+BEGIN
+ i := 2;
+  flag := 1;
+  n := 8;
+ 
+  FOR i in 2..n/2 LOOP
+    IF mod(n,i)=0
+    THEN
+      flag := 0;
+      EXIT;
+    END IF;
+  END LOOP;
+ 
+  IF flag = 1
+  THEN
+    dbms_output.put_line('The number is a prime number');
+  ELSE
+    dbms_output.put_line('The number is NOT a prime number');
+  END IF;
+END;
